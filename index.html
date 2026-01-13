@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Invoice Solutions - Create Professional Invoices in Minutes</title>
+    <meta name="description"
+        content="Generate professional invoices in 2 minutes with AI. Perfect for small business owners who need quick, accurate invoicing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#gradient)" />
+                        <path d="M10 12H22M10 16H22M10 20H16" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#60A5FA" />
+                                <stop offset="100%" stop-color="#2563EB" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>Apex Invoice Solutions</h1>
+                </div>
+                <p class="tagline">Professional invoices in 2 minutes</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Create Professional Invoices Instantly</h2>
+                <p class="hero-description">Simply enter your business details and invoice items. Our AI will generate a
+                    polished, ready-to-use PDF invoice for you.</p>
+            </section>
+
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Business Info</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Invoice Details</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Generate PDF</span>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Step 1: Business Information -->
+                <div class="form-step active" id="step1">
+                    <h3>Your Business Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" placeholder="Acme Corporation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessEmail">Email Address</label>
+                            <input type="email" id="businessEmail" placeholder="hello@acme.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPhone">Phone Number</label>
+                            <input type="tel" id="businessPhone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <input type="text" id="businessAddress" placeholder="123 Main St, City, State 12345">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" onclick="nextStep(2)">
+                            Continue to Invoice Details
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Invoice Details -->
+                <div class="form-step" id="step2">
+                    <h3>Invoice Details</h3>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="clientName">Client Name</label>
+                            <input type="text" id="clientName" placeholder="Client Company Inc." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Client Email</label>
+                            <input type="email" id="clientEmail" placeholder="client@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="invoiceNumber">Invoice Number</label>
+                            <input type="text" id="invoiceNumber" placeholder="INV-001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="invoiceDate">Invoice Date</label>
+                            <input type="date" id="invoiceDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" id="dueDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="CAD">CAD ($)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="items-section">
+                        <div class="items-header">
+                            <h4>Invoice Items</h4>
+                            <button class="btn btn-secondary" onclick="addItem()">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 5V15M5 10H15" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                Add Item
+                            </button>
+                        </div>
+                        <div id="itemsList">
+                            <!-- Items will be added here -->
+                        </div>
+                    </div>
+
+                    <div class="form-grid" style="margin-top: 1.5rem;">
+                        <div class="form-group">
+                            <label for="taxRate">Tax Rate (%)</label>
+                            <input type="number" id="taxRate" value="10" min="0" step="0.1" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="discountAmount">Discount Amount</label>
+                            <input type="number" id="discountAmount" value="0" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" rows="3"
+                            placeholder="Payment terms, thank you message, or other notes..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" onclick="prevStep(1)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Back
+                        </button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">
+                            Review & Generate
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Review & Generate -->
+                <div class="form-step" id="step3">
+                    <h3>Review Your Invoice</h3>
+
+                    <div class="preview-card">
+                        <div class="preview-section">
+                            <h4>Business Information</h4>
+                            <div id="businessPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Client Information</h4>
+                            <div id="clientPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Invoice Summary</h4>
+                            <div id="summaryPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Items</h4>
+                            <div id="itemsPreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="total-card">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotalAmount">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (10%):</span>
+                            <span id="taxAmount">$0.00</span>
+                        </div>
+                        <div class="total-row total-final">
+                            <span>Total Amount:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" onclick="prevStep(2)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Back
+                        </button>
+                        <button class="btn btn-primary btn-generate" onclick="generateInvoice()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 3V10M10 10V17M10 10H17M10 10H3" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Generate PDF Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>AI is generating your invoice...</h3>
+                    <p>Creating a professional PDF document</p>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div class="success-overlay" id="successOverlay">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="#10B981" />
+                            <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Invoice Generated Successfully!</h3>
+                    <p>Your professional invoice is ready to download</p>
+                    <div class="success-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 3V13M10 13L14 9M10 13L6 9M4 17H16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Download PDF
+                        </button>
+                        <button class="btn btn-outline" onclick="createAnother()">Create Another Invoice</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with AI for small business owners</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

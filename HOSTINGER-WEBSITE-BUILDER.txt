@@ -1,0 +1,28 @@
+═══════════════════════════════════════════════════════════════════
+  HOSTINGER WEBSITE BUILDER - EMBED INSTRUCTIONS
+═══════════════════════════════════════════════════════════════════
+
+STEP 1: In Hostinger Website Builder, add a "Custom HTML" element
+
+STEP 2: Copy the ENTIRE content from this file:
+        hostinger-website-builder-embed.html
+
+STEP 3: Paste it into the Custom HTML element
+
+STEP 4: Save and publish your page
+
+═══════════════════════════════════════════════════════════════════
+
+The embed code file contains everything in one file:
+- All HTML structure
+- All CSS styles (scoped to avoid conflicts)
+- All JavaScript functionality
+
+No additional files needed!
+No external dependencies!
+Works completely standalone!
+
+File location:
+C:\Users\Ayinke\.gemini\antigravity\scratch\invoice-generator\hostinger-website-builder-embed.html
+
+═══════════════════════════════════════════════════════════════════

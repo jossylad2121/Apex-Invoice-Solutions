@@ -1,0 +1,1604 @@
+﻿/* ==========================================
+   DESIGN SYSTEM & CSS VARIABLES
+   ========================================== */
+
+:root {
+    /* Colors - Light Blue & White Theme */
+    --color-primary: #3B82F6;
+    --color-primary-light: #60A5FA;
+    --color-primary-dark: #2563EB;
+    --color-primary-gradient: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
+    
+    --color-secondary: #EFF6FF;
+    --color-secondary-light: #DBEAFE;
+    
+    --color-white: #FFFFFF;
+    --color-gray-50: #F9FAFB;
+    --color-gray-100: #F3F4F6;
+    --color-gray-200: #E5E7EB;
+    --color-gray-300: #D1D5DB;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+    
+    --color-success: #10B981;
+    --color-success-light: #D1FAE5;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Borders */
+    --border-radius-sm: 0.375rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    --border-radius-2xl: 1.5rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 50%, #DBEAFE 100%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.header {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-content {
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.logo h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    background: var(--color-primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    font-weight: 500;
+}
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.main-content {
+    position: relative;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   PROGRESS STEPS
+   ========================================== */
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-md);
+    animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all var(--transition-base);
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-gray-200);
+    color: var(--color-gray-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    transition: all var(--transition-base);
+}
+
+.step span {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    font-weight: 500;
+    transition: all var(--transition-base);
+}
+
+.step.active .step-number {
+    background: var(--color-primary-gradient);
+    color: var(--color-white);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: scale(1.1);
+}
+
+.step.active span {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.step.completed .step-number {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.step-line {
+    width: 80px;
+    height: 2px;
+    background: var(--color-gray-200);
+    transition: all var(--transition-base);
+}
+
+.step.completed + .step-line {
+    background: var(--color-success);
+}
+
+/* ==========================================
+   FORM CONTAINER
+   ========================================== */
+
+.form-container {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+.form-step {
+    display: none;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ==========================================
+   FORM ELEMENTS
+   ========================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-group label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-gray-700);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--spacing-md);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    color: var(--color-gray-800);
+    transition: all var(--transition-base);
+    background: var(--color-white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-gray-400);
+}
+
+/* ==========================================
+   ITEMS SECTION
+   ========================================== */
+
+.items-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.items-header h4 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-gray-900);
+}
+
+#itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.item-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: var(--spacing-md);
+    align-items: end;
+    padding: var(--spacing-lg);
+    background: var(--color-gray-50);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--color-gray-100);
+    transition: all var(--transition-base);
+    animation: itemSlideIn 0.3s ease-out;
+}
+
+@keyframes itemSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item-row:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+}
+
+.item-row .form-group {
+    margin: 0;
+}
+
+.btn-remove {
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--border-radius-md);
+    color: var(--color-gray-600);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remove:hover {
+    background: #FEE2E2;
+    border-color: #FCA5A5;
+    color: #DC2626;
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: var(--color-primary-gradient);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary-light);
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-light);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: var(--color-white);
+    color: var(--color-gray-700);
+    border: 2px solid var(--color-gray-300);
+}
+
+.btn-outline:hover {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-400);
+    transform: translateY(-2px);
+}
+
+.btn-generate {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+    margin-top: var(--spacing-xl);
+}
+
+/* ==========================================
+   PREVIEW CARDS
+   ========================================== */
+
+.preview-card {
+    background: var(--color-gray-50);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    border: 2px solid var(--color-gray-100);
+}
+
+.preview-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.preview-section:last-child {
+    margin-bottom: 0;
+}
+
+.preview-section h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.preview-section p {
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-xs);
+}
+
+.preview-section strong {
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+.preview-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-md);
+}
+
+.preview-items-table th {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.preview-items-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-gray-200);
+    color: var(--color-gray-700);
+}
+
+.preview-items-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================
+   TOTAL CARD
+   ========================================== */
+
+.total-card {
+    background: linear-gradient(135deg, #DBEAFE 0%, #EFF6FF 100%);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    border: 2px solid var(--color-primary-light);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+}
+
+.total-final {
+    border-top: 2px solid var(--color-primary);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ==========================================
+   LOADING OVERLAY
+   ========================================== */
+
+.loading-overlay,
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.loading-overlay.active,
+.success-overlay.active {
+    display: flex;
+}
+
+.loading-content,
+.success-content {
+    text-align: center;
+    animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.spinner {
+    width: 64px;
+    height: 64px;
+    border: 4px solid var(--color-gray-200);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--spacing-lg);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-content h3,
+.success-content h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.loading-content p,
+.success-content p {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-xl);
+}
+
+.success-icon {
+    margin-bottom: var(--spacing-lg);
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    color: var(--color-gray-500);
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: var(--spacing-md);
+    }
+    
+    .hero h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .progress-steps {
+        gap: var(--spacing-sm);
+    }
+    
+    .step-line {
+        width: 40px;
+    }
+    
+    .step span {
+        font-size: var(--font-size-xs);
+    }
+    
+    .form-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .success-actions {
+        flex-direction: column;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Invoice Generator - Create Professional Invoices in Minutes</title>
+    <meta name="description" content="Generate professional invoices in 2 minutes with AI. Perfect for small business owners who need quick, accurate invoicing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+                        <path d="M10 12H22M10 16H22M10 20H16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#60A5FA"/>
+                                <stop offset="100%" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>InvoiceAI</h1>
+                </div>
+                <p class="tagline">Professional invoices in 2 minutes</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Create Professional Invoices Instantly</h2>
+                <p class="hero-description">Simply enter your business details and invoice items. Our AI will generate a polished, ready-to-use PDF invoice for you.</p>
+            </section>
+
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Business Info</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Invoice Details</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Generate PDF</span>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Step 1: Business Information -->
+                <div class="form-step active" id="step1">
+                    <h3>Your Business Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName" placeholder="Acme Corporation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessEmail">Email Address</label>
+                            <input type="email" id="businessEmail" placeholder="hello@acme.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPhone">Phone Number</label>
+                            <input type="tel" id="businessPhone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <input type="text" id="businessAddress" placeholder="123 Main St, City, State 12345">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" onclick="nextStep(2)">
+                            Continue to Invoice Details
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Invoice Details -->
+                <div class="form-step" id="step2">
+                    <h3>Invoice Details</h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="clientName">Client Name</label>
+                            <input type="text" id="clientName" placeholder="Client Company Inc." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Client Email</label>
+                            <input type="email" id="clientEmail" placeholder="client@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="invoiceNumber">Invoice Number</label>
+                            <input type="text" id="invoiceNumber" placeholder="INV-001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="invoiceDate">Invoice Date</label>
+                            <input type="date" id="invoiceDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" id="dueDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (â‚¬)</option>
+                                <option value="GBP">GBP (Â£)</option>
+                                <option value="CAD">CAD ($)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="items-section">
+                        <div class="items-header">
+                            <h4>Invoice Items</h4>
+                            <button class="btn btn-secondary" onclick="addItem()">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 5V15M5 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Add Item
+                            </button>
+                        </div>
+                        <div id="itemsList">
+                            <!-- Items will be added here -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" rows="3" placeholder="Payment terms, thank you message, or other notes..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" onclick="prevStep(1)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">
+                            Review & Generate
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Review & Generate -->
+                <div class="form-step" id="step3">
+                    <h3>Review Your Invoice</h3>
+                    
+                    <div class="preview-card">
+                        <div class="preview-section">
+                            <h4>Business Information</h4>
+                            <div id="businessPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Client Information</h4>
+                            <div id="clientPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Invoice Summary</h4>
+                            <div id="summaryPreview"></div>
+                        </div>
+                        <div class="preview-section">
+                            <h4>Items</h4>
+                            <div id="itemsPreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="total-card">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotalAmount">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (10%):</span>
+                            <span id="taxAmount">$0.00</span>
+                        </div>
+                        <div class="total-row total-final">
+                            <span>Total Amount:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" onclick="prevStep(2)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button class="btn btn-primary btn-generate" onclick="generateInvoice()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 3V10M10 10V17M10 10H17M10 10H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Generate PDF Invoice
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>AI is generating your invoice...</h3>
+                    <p>Creating a professional PDF document</p>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div class="success-overlay" id="successOverlay">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="#10B981"/>
+                            <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Invoice Generated Successfully!</h3>
+                    <p>Your professional invoice is ready to download</p>
+                    <div class="success-actions">
+                        <button class="btn btn-primary" onclick="downloadPDF()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 3V13M10 13L14 9M10 13L6 9M4 17H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Download PDF
+                        </button>
+                        <button class="btn btn-outline" onclick="createAnother()">Create Another Invoice</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with AI for small business owners</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+// ==========================================
+// STATE MANAGEMENT
+// ==========================================
+
+let invoiceData = {
+    business: {},
+    client: {},
+    invoice: {},
+    items: [],
+    totals: {}
+};
+
+let currentStep = 1;
+
+// ==========================================
+// INITIALIZATION
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Set default dates
+    const today = new Date().toISOString().split('T')[0];
+    const dueDate = new Date();
+    dueDate.setDate(dueDate.getDate() + 30);
+
+    document.getElementById('invoiceDate').value = today;
+    document.getElementById('dueDate').value = dueDate.toISOString().split('T')[0];
+
+    // Add initial item
+    addItem();
+});
+
+// ==========================================
+// NAVIGATION
+// ==========================================
+
+function nextStep(step) {
+    // Validate current step
+    if (!validateStep(currentStep)) {
+        return;
+    }
+
+    // Save data from current step
+    saveStepData(currentStep);
+
+    // Update UI
+    updateStepUI(step);
+
+    // If moving to step 3, populate preview
+    if (step === 3) {
+        populatePreview();
+    }
+
+    currentStep = step;
+}
+
+function prevStep(step) {
+    updateStepUI(step);
+    currentStep = step;
+}
+
+function updateStepUI(step) {
+    // Update form steps
+    document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+    document.getElementById(`step${step}`).classList.add('active');
+
+    // Update progress steps
+    document.querySelectorAll('.step').forEach((el, index) => {
+        el.classList.remove('active', 'completed');
+        if (index + 1 < step) {
+            el.classList.add('completed');
+        } else if (index + 1 === step) {
+            el.classList.add('active');
+        }
+    });
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ==========================================
+// VALIDATION
+// ==========================================
+
+function validateStep(step) {
+    let isValid = true;
+    let errorMessage = '';
+
+    if (step === 1) {
+        const businessName = document.getElementById('businessName').value.trim();
+        const businessEmail = document.getElementById('businessEmail').value.trim();
+
+        if (!businessName) {
+            errorMessage = 'Please enter your business name';
+            isValid = false;
+        } else if (!businessEmail) {
+            errorMessage = 'Please enter your business email';
+            isValid = false;
+        } else if (!isValidEmail(businessEmail)) {
+            errorMessage = 'Please enter a valid email address';
+            isValid = false;
+        }
+    } else if (step === 2) {
+        const clientName = document.getElementById('clientName').value.trim();
+        const invoiceNumber = document.getElementById('invoiceNumber').value.trim();
+        const items = document.querySelectorAll('.item-row');
+
+        if (!clientName) {
+            errorMessage = 'Please enter client name';
+            isValid = false;
+        } else if (!invoiceNumber) {
+            errorMessage = 'Please enter invoice number';
+            isValid = false;
+        } else if (items.length === 0) {
+            errorMessage = 'Please add at least one item';
+            isValid = false;
+        } else {
+            // Validate all items
+            let hasEmptyItem = false;
+            items.forEach(item => {
+                const desc = item.querySelector('.item-description').value.trim();
+                const qty = item.querySelector('.item-quantity').value;
+                const price = item.querySelector('.item-price').value;
+
+                if (!desc || !qty || !price || qty <= 0 || price <= 0) {
+                    hasEmptyItem = true;
+                }
+            });
+
+            if (hasEmptyItem) {
+                errorMessage = 'Please fill in all item details with valid values';
+                isValid = false;
+            }
+        }
+    }
+
+    if (!isValid) {
+        showNotification(errorMessage, 'error');
+    }
+
+    return isValid;
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showNotification(message, type = 'error') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 24px;
+        background: ${type === 'error' ? '#FEE2E2' : '#D1FAE5'};
+        color: ${type === 'error' ? '#DC2626' : '#059669'};
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
+        font-weight: 500;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// ==========================================
+// DATA MANAGEMENT
+// ==========================================
+
+function saveStepData(step) {
+    if (step === 1) {
+        invoiceData.business = {
+            name: document.getElementById('businessName').value.trim(),
+            email: document.getElementById('businessEmail').value.trim(),
+            phone: document.getElementById('businessPhone').value.trim(),
+            address: document.getElementById('businessAddress').value.trim()
+        };
+    } else if (step === 2) {
+        invoiceData.client = {
+            name: document.getElementById('clientName').value.trim(),
+            email: document.getElementById('clientEmail').value.trim()
+        };
+
+        invoiceData.invoice = {
+            number: document.getElementById('invoiceNumber').value.trim(),
+            date: document.getElementById('invoiceDate').value,
+            dueDate: document.getElementById('dueDate').value,
+            currency: document.getElementById('currency').value,
+            notes: document.getElementById('notes').value.trim()
+        };
+
+        // Save items
+        invoiceData.items = [];
+        document.querySelectorAll('.item-row').forEach(item => {
+            const description = item.querySelector('.item-description').value.trim();
+            const quantity = parseFloat(item.querySelector('.item-quantity').value);
+            const price = parseFloat(item.querySelector('.item-price').value);
+            const total = quantity * price;
+
+            invoiceData.items.push({
+                description,
+                quantity,
+                price,
+                total
+            });
+        });
+
+        // Calculate totals
+        calculateTotals();
+    }
+}
+
+function calculateTotals() {
+    const subtotal = invoiceData.items.reduce((sum, item) => sum + item.total, 0);
+    const tax = subtotal * 0.10; // 10% tax
+    const total = subtotal + tax;
+
+    invoiceData.totals = {
+        subtotal,
+        tax,
+        total
+    };
+}
+
+// ==========================================
+// ITEMS MANAGEMENT
+// ==========================================
+
+function addItem() {
+    const itemsList = document.getElementById('itemsList');
+    const itemIndex = document.querySelectorAll('.item-row').length;
+
+    const itemRow = document.createElement('div');
+    itemRow.className = 'item-row';
+    itemRow.innerHTML = `
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="item-description" placeholder="Service or product description" required>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" class="item-quantity" placeholder="1" min="1" step="1" value="1" required>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="item-price" placeholder="0.00" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label>Total</label>
+            <input type="text" class="item-total" placeholder="$0.00" readonly>
+        </div>
+        <button type="button" class="btn-remove" onclick="removeItem(this)" title="Remove item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M6 6L14 14M6 14L14 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    `;
+
+    itemsList.appendChild(itemRow);
+
+    // Add event listeners for auto-calculation
+    const qtyInput = itemRow.querySelector('.item-quantity');
+    const priceInput = itemRow.querySelector('.item-price');
+    const totalInput = itemRow.querySelector('.item-total');
+
+    function updateTotal() {
+        const qty = parseFloat(qtyInput.value) || 0;
+        const price = parseFloat(priceInput.value) || 0;
+        const total = qty * price;
+        totalInput.value = formatCurrency(total);
+    }
+
+    qtyInput.addEventListener('input', updateTotal);
+    priceInput.addEventListener('input', updateTotal);
+}
+
+function removeItem(button) {
+    const itemRow = button.closest('.item-row');
+    itemRow.style.animation = 'itemSlideOut 0.3s ease-out';
+    setTimeout(() => itemRow.remove(), 300);
+}
+
+// ==========================================
+// PREVIEW
+// ==========================================
+
+function populatePreview() {
+    // Business preview
+    const businessPreview = document.getElementById('businessPreview');
+    businessPreview.innerHTML = `
+        <p><strong>Name:</strong> ${invoiceData.business.name}</p>
+        <p><strong>Email:</strong> ${invoiceData.business.email}</p>
+        ${invoiceData.business.phone ? `<p><strong>Phone:</strong> ${invoiceData.business.phone}</p>` : ''}
+        ${invoiceData.business.address ? `<p><strong>Address:</strong> ${invoiceData.business.address}</p>` : ''}
+    `;
+
+    // Client preview
+    const clientPreview = document.getElementById('clientPreview');
+    clientPreview.innerHTML = `
+        <p><strong>Name:</strong> ${invoiceData.client.name}</p>
+        ${invoiceData.client.email ? `<p><strong>Email:</strong> ${invoiceData.client.email}</p>` : ''}
+    `;
+
+    // Summary preview
+    const summaryPreview = document.getElementById('summaryPreview');
+    summaryPreview.innerHTML = `
+        <p><strong>Invoice Number:</strong> ${invoiceData.invoice.number}</p>
+        <p><strong>Invoice Date:</strong> ${formatDate(invoiceData.invoice.date)}</p>
+        <p><strong>Due Date:</strong> ${formatDate(invoiceData.invoice.dueDate)}</p>
+        <p><strong>Currency:</strong> ${invoiceData.invoice.currency}</p>
+        ${invoiceData.invoice.notes ? `<p><strong>Notes:</strong> ${invoiceData.invoice.notes}</p>` : ''}
+    `;
+
+    // Items preview
+    const itemsPreview = document.getElementById('itemsPreview');
+    let itemsHTML = '<table class="preview-items-table"><thead><tr><th>Description</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>';
+
+    invoiceData.items.forEach(item => {
+        itemsHTML += `
+            <tr>
+                <td>${item.description}</td>
+                <td>${item.quantity}</td>
+                <td>${formatCurrency(item.price)}</td>
+                <td>${formatCurrency(item.total)}</td>
+            </tr>
+        `;
+    });
+
+    itemsHTML += '</tbody></table>';
+    itemsPreview.innerHTML = itemsHTML;
+
+    // Update totals
+    document.getElementById('subtotalAmount').textContent = formatCurrency(invoiceData.totals.subtotal);
+    document.getElementById('taxAmount').textContent = formatCurrency(invoiceData.totals.tax);
+    document.getElementById('totalAmount').textContent = formatCurrency(invoiceData.totals.total);
+}
+
+// ==========================================
+// INVOICE GENERATION
+// ==========================================
+
+function generateInvoice() {
+    // Show loading overlay
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    loadingOverlay.classList.add('active');
+
+    // Simulate AI processing
+    setTimeout(() => {
+        loadingOverlay.classList.remove('active');
+
+        // Show success overlay
+        const successOverlay = document.getElementById('successOverlay');
+        successOverlay.classList.add('active');
+    }, 3000);
+}
+
+function downloadPDF() {
+    // In a real application, this would generate and download a PDF
+    // For this demo, we'll create a simple HTML-based invoice
+
+    const invoiceHTML = generateInvoiceHTML();
+
+    // Create a new window with the invoice
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(invoiceHTML);
+    printWindow.document.close();
+
+    // Trigger print dialog
+    setTimeout(() => {
+        printWindow.print();
+    }, 500);
+
+    showNotification('Invoice ready! Use your browser\'s print dialog to save as PDF.', 'success');
+}
+
+function generateInvoiceHTML() {
+    const currencySymbol = getCurrencySymbol(invoiceData.invoice.currency);
+
+    return `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice ${invoiceData.invoice.number}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; padding: 40px; color: #333; }
+        .invoice-container { max-width: 800px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 3px solid #3B82F6; }
+        .logo { font-size: 32px; font-weight: bold; color: #3B82F6; }
+        .invoice-title { font-size: 24px; color: #666; }
+        .info-section { display: flex; justify-content: space-between; margin-bottom: 40px; }
+        .info-block h3 { color: #3B82F6; margin-bottom: 10px; font-size: 14px; text-transform: uppercase; }
+        .info-block p { margin: 5px 0; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th { background: #EFF6FF; padding: 12px; text-align: left; font-weight: 600; color: #3B82F6; border-bottom: 2px solid #3B82F6; }
+        td { padding: 12px; border-bottom: 1px solid #E5E7EB; }
+        .text-right { text-align: right; }
+        .totals { margin-left: auto; width: 300px; }
+        .totals-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 16px; }
+        .totals-final { border-top: 2px solid #3B82F6; margin-top: 10px; padding-top: 10px; font-size: 20px; font-weight: bold; color: #3B82F6; }
+        .notes { margin-top: 40px; padding: 20px; background: #F9FAFB; border-radius: 8px; }
+        .notes h3 { color: #3B82F6; margin-bottom: 10px; }
+        .footer { margin-top: 60px; text-align: center; color: #999; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <div>
+                <div class="logo">InvoiceAI</div>
+            </div>
+            <div style="text-align: right;">
+                <div class="invoice-title">INVOICE</div>
+                <p style="font-size: 18px; margin-top: 5px;">#${invoiceData.invoice.number}</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-block">
+                <h3>From</h3>
+                <p><strong>${invoiceData.business.name}</strong></p>
+                <p>${invoiceData.business.email}</p>
+                ${invoiceData.business.phone ? `<p>${invoiceData.business.phone}</p>` : ''}
+                ${invoiceData.business.address ? `<p>${invoiceData.business.address}</p>` : ''}
+            </div>
+            <div class="info-block">
+                <h3>Bill To</h3>
+                <p><strong>${invoiceData.client.name}</strong></p>
+                ${invoiceData.client.email ? `<p>${invoiceData.client.email}</p>` : ''}
+            </div>
+            <div class="info-block">
+                <h3>Invoice Details</h3>
+                <p><strong>Date:</strong> ${formatDate(invoiceData.invoice.date)}</p>
+                <p><strong>Due:</strong> ${formatDate(invoiceData.invoice.dueDate)}</p>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-right">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${invoiceData.items.map(item => `
+                    <tr>
+                        <td>${item.description}</td>
+                        <td class="text-right">${item.quantity}</td>
+                        <td class="text-right">${currencySymbol}${item.price.toFixed(2)}</td>
+                        <td class="text-right">${currencySymbol}${item.total.toFixed(2)}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+        
+        <div class="totals">
+            <div class="totals-row">
+                <span>Subtotal:</span>
+                <span>${currencySymbol}${invoiceData.totals.subtotal.toFixed(2)}</span>
+            </div>
+            <div class="totals-row">
+                <span>Tax (10%):</span>
+                <span>${currencySymbol}${invoiceData.totals.tax.toFixed(2)}</span>
+            </div>
+            <div class="totals-row totals-final">
+                <span>Total:</span>
+                <span>${currencySymbol}${invoiceData.totals.total.toFixed(2)}</span>
+            </div>
+        </div>
+        
+        ${invoiceData.invoice.notes ? `
+            <div class="notes">
+                <h3>Notes</h3>
+                <p>${invoiceData.invoice.notes}</p>
+            </div>
+        ` : ''}
+        
+        <div class="footer">
+            <p>Generated with InvoiceAI - Professional invoices in 2 minutes</p>
+        </div>
+    </div>
+</body>
+</html>
+    `;
+}
+
+function createAnother() {
+    // Reset the form
+    location.reload();
+}
+
+// ==========================================
+// UTILITY FUNCTIONS
+// ==========================================
+
+function formatCurrency(amount) {
+    const symbol = getCurrencySymbol(invoiceData.invoice?.currency || 'USD');
+    return `${symbol}${amount.toFixed(2)}`;
+}
+
+function getCurrencySymbol(currency) {
+    const symbols = {
+        'USD': '$',
+        'EUR': 'â‚¬',
+        'GBP': 'Â£',
+        'CAD': '$'
+    };
+    return symbols[currency] || '$';
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes itemSlideOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+    }
+`;
+document.head.appendChild(style);
+

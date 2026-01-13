@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example: Embedding InvoiceAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Example Website Header */
+        .site-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .site-header p {
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .site-nav {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .site-nav a:hover {
+            background: #f0f0f0;
+        }
+
+        .site-nav a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .intro-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        /* Embedded App Container */
+        .app-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-container iframe {
+            width: 100%;
+            height: 1400px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .site-footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .app-container iframe {
+                height: 1600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Example Website Header -->
+    <header class="site-header">
+        <h1>Your Business Website</h1>
+        <p>Professional tools for your business needs</p>
+    </header>
+
+    <!-- Example Navigation -->
+    <nav class="site-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#" class="active">Invoice Generator</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <h2>Create Professional Invoices</h2>
+            <p>
+                Use our free invoice generator to create professional invoices in minutes.
+                Simply fill in your business details, add your invoice items, and generate a
+                ready-to-use PDF invoice.
+            </p>
+            <p>
+                <strong>Features:</strong> Multi-currency support, automatic calculations,
+                professional templates, and instant PDF generation.
+            </p>
+        </section>
+
+        <!-- Embedded Invoice Generator -->
+        <section class="app-container">
+            <iframe src="index.html" title="Invoice Generator Application" loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <!-- Example Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Your Business Name. All rights reserved.</p>
+        <p>Powered by InvoiceAI</p>
+    </footer>
+</body>
+
+</html>
